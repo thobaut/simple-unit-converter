@@ -1,70 +1,136 @@
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Dark theme */
 body {
-  background-color: #1e1e1e;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container {
-  text-align: center;
-  background-color: #2b2b2b;
-  padding: 20px;
-  border-radius: 10px;
-  width: 350px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-h1 {
-  margin-bottom: 20px;
-  font-size: 1.5em;
-}
-
-.converter {
+  background-color: #0d0d0d;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  padding: 20px;
 }
 
+/* Categories section */
+.categories-container {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 20%;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
+}
+
+.categories-container h2 {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+  color: #00ffaa;
+}
+
+/* Category buttons */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  background: #222;
+  color: #00ffaa;
+  border: 2px solid #00ffaa;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.category-btn:hover, .category-btn.active {
+  background: #00ffaa;
+  color: #000;
+}
+
+/* Main converter container */
+.container {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
+  text-align: center;
+  width: 400px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+h1 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #00ffaa;
+  font-weight: 600;
+}
+
+/* Converter layout */
+.converter {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Units section (left) */
+.units, .values {
+  text-align: left;
+  width: 50%;
+  margin-top: 8px;
+}
+
+/* Labels */
 label {
   font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-top: 10px;
   margin-bottom: 5px;
 }
 
-select, input, button {
+/* Dropdowns and inputs */
+select, input {
+  width: 100%;
   padding: 10px;
   font-size: 16px;
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-}
-
-select, input {
-  background-color: #333;
+  border: 2px solid #00ffaa;
+  border-radius: 6px;
+  background: #222;
   color: #fff;
+  outline: none;
+  transition: all 0.3s ease-in-out;
 }
 
-button {
-  background-color: #ff9800;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
+select:focus, input:focus {
+  border-color: #00cc88;
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
 }
 
-button:hover {
-  background-color: #e68900;
-}
-
+/* Fixed size for the result box */
 #result {
-  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
   font-size: 18px;
   font-weight: bold;
+  background: #222;
+  border-radius: 6px;
+  border: 1px solid #00ffaa;
+  text-align: center;
+  min-height: 42px; /* Keeps size consistent */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
